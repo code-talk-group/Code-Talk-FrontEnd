@@ -1,4 +1,5 @@
-##Vision
+## Vision  
+
 **Code Talk** helps users learn how to "speak" code.
 
 New developers often struggle with properly talking about code aloud. Are you supposed to mention the curly brackets? Are you missing a keyword when you describe the line of code? Should you be saying instantiate or invoke?
@@ -11,7 +12,7 @@ You can walk the walk. Now let **Code Talk** help you talk the talk.
 
 ---------------------------
 
-###Scope (In/Out)
+### Scope (In/Out)  
 
 **IN**
 - The app will allow users to choose from common code structures to translate into spoken code
@@ -24,7 +25,8 @@ You can walk the walk. Now let **Code Talk** help you talk the talk.
 
 ---------------------------
 
-###MVP
+### MVP  
+
 Users can CRUD spoken code snippets.
 
 **Front-End**
@@ -37,13 +39,15 @@ Users can CRUD spoken code snippets.
 
 ---------------------------
 
-###Stretch
+### Stretch  
+
 - Expanding options of code lines users can choose from.
 - Adding Azure API, Text to Speech, to allow users to hear their created spoken code snippets.
 
 ---------------------------
 
-###Functional Requirements
+### Functional Requirements  
+
 - A user can create a spoken code snippet.
 - A user can update a spoken code snippet.
 - A user can search through previously created spoken code snippets.
@@ -51,13 +55,15 @@ Users can CRUD spoken code snippets.
 
 ---------------------------
 
-###Non-Functional Requirements
+### Non-Functional Requirements  
+
 - Scalability: App should be easy to build upon. Stretch goals can be implemented without requiring base application to be rewritten.
 - Usability: App should be intuitive to navigate and users should easily be able to get to their desired outcome
 
 ---------------------------
 
-###Data Flow
+### Data Flow  
+
 1. User selects from a drop down menu, which common line of code user would like translated.
 2. Selection will then display a corresponding form containing fields for any data types, variable names and method names. User will then fill out form.
 3. User personalized form data will be sent out to the API.
