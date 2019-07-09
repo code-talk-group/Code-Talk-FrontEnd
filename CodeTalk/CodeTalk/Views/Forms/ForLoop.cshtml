@@ -12,10 +12,24 @@
 </head>
 <body>
     <div class="forLoop">
-        <form action="">
-            public static int <input type="text" name="" value="Method Name">
-            (int[<input type="text" name="" value="int value">] codeTalkArray )<br> { <br />int counter = 0;<span><br>for (int i = 0; i < codeTalkArray.Length; i++)<br />{<br />counter++; <br></span>}<br>return counter;<br />}<br /><input type="submit" value="Submit">
-        </form>
+        <p>Enter a method name: </p>
+
+        <input type="text" id="input1" oninput="methodName()">
+
+        <p>Enter a name for your array: </p>
+
+        <input type="text" id="input2" oninput="methodName()">
+
+
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var x = document.getElementById("input1").value;
+                var y = document.getElementById("input2").value;
+                document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( int[] " + y + ")<br>" + "<br>{<br>int counter = 0;<br>for (int i = 0; i < " + y + ".Length; i++)<br>{<br>counter++;<br>}<br>return counter;<br>}";
+            }
+        </script>
     </div>
 </body>
 </html>
