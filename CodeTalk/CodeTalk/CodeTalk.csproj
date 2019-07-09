@@ -13,6 +13,7 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Assets\" />
+    <Folder Include="wwwroot\JS\" />
   </ItemGroup>
 
 </Project>
