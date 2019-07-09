@@ -1,4 +1,4 @@
-## Vision  
+## Vision
 
 **Code Talk** helps users learn how to "speak" code.
 
@@ -12,7 +12,7 @@ You can walk the walk. Now let **Code Talk** help you talk the talk.
 
 ---------------------------
 
-### Scope (In/Out)  
+### Scope (In/Out)
 
 **IN**
 - The app will allow users to choose from common code structures to translate into spoken code
@@ -21,17 +21,17 @@ You can walk the walk. Now let **Code Talk** help you talk the talk.
 - The app allows users to delete spoken code lines that they are no longer interested in saving
 
 **OUT**
-- For initial app development we will only allow users to work with C# syntax
+- This app will never have paid features. It is and always will be free to use.
 
 ---------------------------
 
-### MVP  
+### MVP
 
 Users can CRUD spoken code snippets.
 
 **Front-End**
 - Allows user to select and personalize a line of code and send it to the API.
-- User can update or delete lines of spoken code they have previous created.
+- User can update or delete lines of spoken code they have previously created.
 
 **Back-End**
 - API will take in a request and return a spoken code snippet.
@@ -39,14 +39,14 @@ Users can CRUD spoken code snippets.
 
 ---------------------------
 
-### Stretch  
+### Stretch
 
 - Expanding options of code lines users can choose from.
 - Adding Azure API, Text to Speech, to allow users to hear their created spoken code snippets.
 
 ---------------------------
 
-### Functional Requirements  
+### Functional Requirements
 
 - A user can create a spoken code snippet.
 - A user can update a spoken code snippet.
@@ -55,20 +55,20 @@ Users can CRUD spoken code snippets.
 
 ---------------------------
 
-### Non-Functional Requirements  
+### Non-Functional Requirements
 
-- Scalability: App should be easy to build upon. Stretch goals can be implemented without requiring base application to be rewritten.
-- Usability: App should be intuitive to navigate and users should easily be able to get to their desired outcome
+- Modifiability: App should be easy to build upon, as the database will be kept open ended. Allowing for stretch goals to be implemented without having to restructure the entire database.
+- Usability: App should be intuitive to navigate and users should easily be able to get to their desired outcome. Users should be comfortable with app within 1 minute of use.
 
 ---------------------------
 
-### Data Flow  
+### Data Flow
 
 1. User selects from a drop down menu, which common line of code user would like translated.
 2. Selection will then display a corresponding form containing fields for any data types, variable names and method names. User will then fill out form.
-3. User personalized form data will be sent out to the API.
+3. User personalized form data will be sent out to the API from selected form page.
 4. API will then find the matching common line of code's spoken snippet and plug in the form data.
-5. Spoken code snippet will be saved to the user snippets table.
-6. Spoken code snippet will be displayed to user.
+5. API will save code spoken snippet into table.
+6. Spoken code snippet will be returned to on results view.
 
 Similar flows happen for deletes and updates.
