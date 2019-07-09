@@ -32,49 +32,60 @@ https://github.com/code-talk-group/CodeTalkAPI
 
 ## User Stories  
 
-***1. As a user, I want to input code based on code parameters***
+***1. As a user, I want dropdown code options to easily create a syntactically correct method***
 
 **Features:**
-- User can input variables into form
-- User can choose which form to input to
-- Can confirm information based off input
+- User can select and input variable options into forms
+- User can select mock code from the dropdown 
+- After completing all required options, user can confirm valid code with a redirect to result
 
 **Acceptance:**
-- Ensure forms are linked to drop down
-- Ensure input is being captured
+- Ensure forms are linked to the dropdown
+- Ensure all inputs are completed and valid before submitting code 
 
-***2. As a user, I want to save sentences for later reference***
+***2. As a user, I want to be able to update the results to reflect all of my previous searches***
+
+**Features:**  
+- User can view current result
+- User can view previous results
+
+**Acceptance:**  
+- Ensure that each new result is reflected when results are viewed
+
+
+***3. As a user, I want to update individual results to suit my understanding and personal preference***
 
 **Features:**
-- User can capture output
-- User can save output
-- User can view saved previously saved outputs
+- User can select a result to update
+- User can update a selected result
+- User can view updated results
 
 **Acceptance:**
-- Ensure output is saved in database
+- Ensure correct entry is present in results
+- Ensure that updated entry changes are reflected in results
 
-
-***3. As a user, I want to edit sentences to suit my understanding and speech pattern***
+***4. As a user, I want to input a code snippet and receive a gramatically correct sentence verbalizing my code.***
 
 **Features:**
-- User can select a entry to edit
-- User can change entry
-- User can update
-- User can view updated entry
+- User can select all input options to complete a method with syntactically correct code
+- User can be directed to a result page
+- User can view a sentence verbalizing their code
+
+**Acceptance:**  
+- Ensure that all inputs are completed to submit syntactically correct code
+- Ensure that on submit, page redirects to result
+- Ensure that sumbitted code returns relevant description of submitted code
+
+
+***5. As a user, I want to send a query to the API to remove results which are no longer relevant to me.***
+
+**Feature:**  
+- User can view all previous results
+- User can select a result to be deleted by the API
 
 **Acceptance:**
-- Ensure correct entry is grabbed from the database
-- Ensure that entry is updated
-
-
-***4. As a user, I want to delete sentences that I no longer need to practice.***
-
-**Feature:**
- - User can delete entry
-
-**Acceptance:**
- - Ensure correct entry is grabbed from database
-- Ensure that entry is removed from database
+- Ensure that all previous results are visible
+- Ensure that selected result is no longer present on result page
 
 ------------------------------
 
