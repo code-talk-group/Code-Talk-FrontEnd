@@ -6,22 +6,31 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet">
+
     <title>Code Talk Home Page</title>
 </head>
 <body>
-    <h1>Start of the take over</h1>
-    <form method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="FormType" class="control-label">Code Selection</label>
-            <select asp-for="FormType" asp-items="@Html.GetEnumSelectList(typeof(CodeTalk.Models.FormType))" class="form-control"></select>
-            <span asp-validation-for="FormType" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <button asp-route-selection="FormType" type="submit" class="btn btn-primary" >Select</button>
-        </div>
-    </form>
-
-
+    <header>
+    <div class="logo">Code Talk</div>
+    </header>
+    <section>
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FormType" class="control-label">Select an Option</label>
+                <select asp-for="FormType" asp-items="@Html.GetEnumSelectList(typeof(CodeTalk.Models.FormType))" class="form-control"></select>
+                <span asp-validation-for="FormType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <button asp-route-selection="FormType" type="submit" class="btn btn-primary">Select</button>
+            </div>
+        </form>
+    </section>
+    <footer>
+        <div class="copyright">Copyright 2019 &copy</div>
+    </footer>
 </body>
 </html>
