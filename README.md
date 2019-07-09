@@ -43,7 +43,7 @@ https://github.com/code-talk-group/CodeTalkAPI
 - Ensure forms are linked to the dropdown
 - Ensure all inputs are completed and valid before submitting code 
 
-***2. As a user, I want to be able to update the results to reflect all of my previous searches***
+***2. As a user, I want to send a query to the API to update the results to reflect all of my previous searches***
 
 **Features:**  
 - User can view current result

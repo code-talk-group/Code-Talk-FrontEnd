@@ -10,9 +10,14 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
     <title>Code Talk Home Page</title>
 </head>
 <body>
+    <header>
+    <div class="logo">Code Talk</div>
+    </header>
     <h1>Start of the take over</h1>
     <form asp-action="Select">
         @Html.DropDownList("FormType", new SelectList(Enum.GetValues(typeof(FormType))), "Select Code Type", new { @class = "form-control" })
@@ -23,6 +28,7 @@
 
     </form>
     <a href="@Url.Action("Function", "Forms")">Function Form</a>
+    <footer></footer>
 
 </body>
 </html>

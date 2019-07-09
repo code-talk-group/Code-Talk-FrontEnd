@@ -1,2 +1,24 @@
-﻿body {
+﻿@font-face {
+    font-family: 'sberg';
+    src: url(../Assets/Schwarzenberg.ttf) format('truetype');
+}
+
+header {
+    height: 240px;
+    background-image: url(https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=12600);
+}
+
+.logo {
+    font-family: sberg;
+    font-size: 20vw;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    text-align: center;
+    vertical-align: middle;
+    line-height: 240px;
+}
+
+body {
+
 }
