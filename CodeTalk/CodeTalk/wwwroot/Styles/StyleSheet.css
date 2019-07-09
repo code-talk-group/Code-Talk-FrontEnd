@@ -19,11 +19,18 @@ section {
 }
 
 .function {
-
+    height: 400px;
+    display: block;
+    margin: 8px;
+    border: solid 4px black;
+    font-size: 20px;
 }
 
 .forLoop {
-
+    height: 400px;
+    display: block;
+    margin: 8px;
+    border: solid 4px black;
 }
 
 label {

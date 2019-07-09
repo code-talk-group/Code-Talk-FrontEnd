@@ -12,10 +12,29 @@
 </head>
 <body>
     <div class="function">
-        <form action="">
-            public static void <input type="text" name="" value="Method Name">
-            (<input type="text" name="" value="Data Type"><input type="text" name="" value="Parameter Name">)<br> { <br /><span><br>Method statements and arguments are defined here<br></span><br>}<br><br /><input type="submit" value="Submit">
-        </form>
+        <p>Enter a method name: </p>
+
+        <input type="text" id="input1" oninput="methodName()">
+
+        <p>Enter a data type (int, bool, string): </p>
+
+        <input type="text" id="input2" oninput="methodName()">
+
+        <p>Enter a parameter name: </p>
+
+        <input type="text" id="input3" oninput="methodName()">
+
+
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var x = document.getElementById("input1").value;
+                var y = document.getElementById("input2").value;
+                var z = document.getElementById("input3").value;
+                document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (" + y + " " + z + ")<br>" + "<br>{<br><br>Method statements and arguments defined here<br><br>}";
+            }
+        </script>
     </div>
 </body>
 </html>

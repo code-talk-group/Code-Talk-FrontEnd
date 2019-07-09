@@ -21,5 +21,4 @@ namespace CodeTalk
             WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
     }
-
 }
