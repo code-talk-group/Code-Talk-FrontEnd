@@ -2,38 +2,62 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using CodeTalk.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace CodeTalk.Controllers
 {
-    //static HttpClient client = new HttpClient();
+    [Route("api/[controller]")]
     public class FormsController : Controller
     {
-        public IActionResult Function()
+        [HttpGet]
+        public static async Task<JObject> Index()
         {
-            return View();
-        }
+            using (var client = new HttpClient())
+            {
 
-        public IActionResult Variable()
-        {
-            return View();
-        }
 
-        public IActionResult IfStatement()
-        {
-            return View();
-        }
+                client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                HttpResponseMessage response = await client.GetAsync($"default/0");
 
-        public IActionResult ForLoop()
-        {
-            return View();
+                if (response.IsSuccessStatusCode)
+                {
+                    return JObject.Parse(await response.Content.ReadAsStringAsync());
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
+            public IActionResult Function()
+            {
+                return View();
+            }
 
-        //Get: Code Results From API
-        public async Task<IActionResult> CodeFromApi()
-        {
-             return View(await _context.GetResultsAsync());
+            public IActionResult Variable()
+            {
+                return View();
+            }
+
+            public IActionResult IfStatement()
+            {
+                return View();
+            }
+
+            public IActionResult ForLoop()
+            {
+                return View();
+            }
+
+            //Get: Code Results From API
+            //public async Task<IActionResult> CodeSnippetsFromApi()
+            //{
+            //    return View(await client.GetAllCodeSnippets());
+            //}
         }
     }
-}
