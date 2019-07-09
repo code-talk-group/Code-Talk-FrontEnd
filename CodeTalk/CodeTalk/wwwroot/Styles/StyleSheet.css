@@ -31,6 +31,7 @@ section {
     display: block;
     margin: 8px;
     border: solid 4px black;
+    font-size: 20px;
 }
 
 label {
