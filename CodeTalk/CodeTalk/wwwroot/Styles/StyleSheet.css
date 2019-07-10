@@ -21,40 +21,59 @@ section {
 }
 
 .function {
-    height: 400px;
-    display: block;
+    min-height: 650px;
     margin: 8px;
     border: solid 4px black;
-    font-size: 20px;
+    font-family: Verdana;
 }
 
 .forLoop {
-    height: 400px;
-    display: block;
+    min-height: 650px;
     margin: 8px;
     border: solid 4px black;
-    font-size: 20px;
 }
 
-.q {
-    text-align: left;
-    font-family: sberg;
+.mName {
+    margin-left: 43%;
+    padding: 0.5rem;
 }
 
-.resultCode {
+.pName {
+    margin-left: 43%;
+    padding: 0.5rem;
+}
 
+.dataTp {
+    margin-left: 43%;
+    padding: 0.5rem;
+}
+
+h2 {
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5em;
 }
 
 #codeTalkCode {
-    margin-left: 32%;
+    margin-left: 36%;
+    font-size: 1.2em;
 }
 
-label {
+.control-label {
     font-family: 'Oswald', sans-serif;
     color: black;
     font-size: 30px;
     margin-left: -12%;
     text-shadow: 1px 1px 1px #CD6695;
+}
+
+.toResultButton {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left:45%;
 }
 
 form {
@@ -157,8 +176,4 @@ button:active {
     text-align: center;
     vertical-align: middle;
     line-height: 240px;
-}
-
-body {
-
 }

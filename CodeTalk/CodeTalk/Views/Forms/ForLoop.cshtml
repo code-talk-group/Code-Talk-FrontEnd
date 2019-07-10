@@ -12,15 +12,17 @@
 </head>
 <body>
     <div class="forLoop">
-        <p>Enter a method name: </p>
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="mName">
+            <input type="text" id="input1" placeholder="Method Name" name="method" oninput="methodName()" required>
+        </div>
+        <div class="dataTp">
+            <input type="text" id="input2" placeholder="Array Name" name="dType" oninput="methodName()" required>
+        </div>
 
-        <input type="text" id="input1" oninput="methodName()">
-
-        <p>Enter a name for your array: </p>
-
-        <input type="text" id="input2" oninput="methodName()">
-
-
+        <h2 class="resultCode"><strong>Your Code</strong></h2>
+        <hr />
         <p id="codeTalkCode"></p>
 
         <script>
@@ -30,6 +32,7 @@
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( int[] " + y + ")" + "<br>{<br><br>int counter = 0;<br>for (int i = 0; i < " + y + ".Length; i++)<br><br>{<br><br>counter++;<br>}<br>return counter;<br>}";
             }
         </script>
+        <button class="toResultButton" type="submit">Sumbit</button>
     </div>
 </body>
 </html>
