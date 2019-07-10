@@ -11,7 +11,6 @@ using Newtonsoft.Json.Linq;
 
 namespace CodeTalk.Controllers
 {
-    //[Route("api/[controller]")]
     public class FormsController : Controller
     {
         [HttpGet]
@@ -33,16 +32,6 @@ namespace CodeTalk.Controllers
                 Option = rawSentence.Option
                 });
 
-                //if (response.IsSuccessStatusCode)
-                //{
-
-                //    var apiResult = JObject.Parse(await response.Content.ReadAsStringAsync());
-                //    return View(apiResult);
-                //}
-                //else
-                //{
-                //    return null;
-                //}
             }
         }
         public IActionResult Function()
@@ -65,10 +54,5 @@ namespace CodeTalk.Controllers
                 return View();
             }
 
-            //Get: Code Results From API
-            //public async Task<IActionResult> CodeSnippetsFromApi()
-            //{
-            //    return View(await client.GetAllCodeSnippets());
-            //}
         }
     }
