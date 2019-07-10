@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+
 
 namespace CodeTalk.Models
 {
@@ -9,6 +11,13 @@ namespace CodeTalk.Models
     {
         public string Code { get; set; }
 
-        public string Sentence { get; set; }
+        public string baseString { get; set; }
+
+        public int ID { get; set; }
+
+        public int Option { get; set; }
+
+        public ICollection<Results> ApiResult { get; set; }
     }
+
 }

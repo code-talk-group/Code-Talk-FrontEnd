@@ -11,30 +11,41 @@ using Newtonsoft.Json.Linq;
 
 namespace CodeTalk.Controllers
 {
-    [Route("api/[controller]")]
+    //[Route("api/[controller]")]
     public class FormsController : Controller
     {
         [HttpGet]
-        public static async Task<JObject> Index()
+        public  async Task<IActionResult> Index()
         {
             using (var client = new HttpClient())
             {
 
 
                 client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                HttpResponseMessage response = await client.GetAsync($"default/0");
+                HttpResponseMessage response = await client.GetAsync($"default");
 
-                if (response.IsSuccessStatusCode)
-                {
-                    return JObject.Parse(await response.Content.ReadAsStringAsync());
-                }
-                else
-                {
-                    return null;
-                }
+                var stringResult = await response.Content.ReadAsStringAsync();
+                Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
+
+                return View(new Results
+                {ID = rawSentence.ID,
+                baseString = rawSentence.baseString,
+                Option = rawSentence.Option
+                });
+
+                //if (response.IsSuccessStatusCode)
+                //{
+
+                //    var apiResult = JObject.Parse(await response.Content.ReadAsStringAsync());
+                //    return View(apiResult);
+                //}
+                //else
+                //{
+                //    return null;
+                //}
             }
         }
-            public IActionResult Function()
+        public IActionResult Function()
             {
                 return View();
             }
