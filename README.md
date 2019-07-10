@@ -18,7 +18,12 @@ With **Code Talk** users can gain the confidence they need to establish connecti
 
 Code Talk API :
 
-https://github.com/code-talk-group/CodeTalkAPI
+https://github.com/code-talk-group/CodeTalkAPI  
+
+## Homepage  
+
+![CodeTalk](https://user-images.githubusercontent.com/47064974/61012251-89f8ff80-a332-11e9-87e3-5d35e0e36a12.png)
+
 
 ## Wireframes  
 
@@ -91,7 +96,7 @@ https://github.com/code-talk-group/CodeTalkAPI
 
 ## Getting Started
 Clone this repository to your local machine.
-```
+
 $ git clone [https://github.com/code-talk-group/Code-Talk-FrontEnd.git]
 
 -------------------------------
