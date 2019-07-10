@@ -13,39 +13,73 @@ footer {
     background-image: url(../Assets/yeah.jpg);
 }
 
-section {
-    height: 400px;
+input[type=text] {
+    padding: 5px;
+    border: 2px solid #ccc;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    width: 33%;
+    height: 32px;
+    font-size: 15px;
+    text-align: center;
+}
+
+    section {
+    background-color: #FAFAFA;
     margin: 8px;
-    border: solid 4px black;
-    background-image: url();
+    height: 400px;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
 .function {
+    background-color: #FAFAFA;
     min-height: 650px;
     margin: 8px;
-    border: solid 4px black;
-    font-family: Verdana;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
 .forLoop {
+    background-color: #FAFAFA;
     min-height: 650px;
     margin: 8px;
-    border: solid 4px black;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+}
+
+.ifStatement {
+    background-color: #FAFAFA;
+    min-height: 650px;
+    margin: 8px;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+}
+
+.project {
+    margin-top: 5%;
+    margin-left: 40%;
+    padding: 0.5rem;
 }
 
 .mName {
-    margin-left: 43%;
+    margin-left: 40%;
     padding: 0.5rem;
 }
 
 .pName {
-    margin-left: 43%;
+    margin-left: 40%;
     padding: 0.5rem;
 }
 
 .dataTp {
-    margin-left: 43%;
+    margin-left: 40%;
     padding: 0.5rem;
+}
+
+.intVal {
+    margin-left: 41%;
+    padding: 0.5rem
 }
 
 h2 {
@@ -73,7 +107,7 @@ h2 {
 .toResultButton {
     margin-top: 10%;
     margin-bottom: 10%;
-    margin-left:45%;
+    margin-left:46%;
 }
 
 .idxForm {
@@ -176,4 +210,5 @@ button:active {
     text-align: center;
     vertical-align: middle;
     line-height: 240px;
+    text-decoration: underline transparent;
 }
