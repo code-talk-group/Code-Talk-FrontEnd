@@ -27,16 +27,21 @@
             <input type="text" id="input3" placeholder="Integer Value" name="intVal" oninput="methodName()" required>
         </div>
 
-        <h2 class="resultCode"><strong>Your Code</strong></h2>
+        <h2 id="projectName"></h2>
         <hr />
         <p id="codeTalkCode"></p>
 
         <script>
             function methodName() {
+                var codeName = document.getElementById("codeName").value;
                 var x = document.getElementById("input1").value;
                 var y = document.getElementById("input2").value;
                 var z = document.getElementById("input3").value;
+                document.getElementById("projectName").innerHTML = codeName;
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (int " + y + ")<br>" + "<br>{<br><br>" + y + " = " + z + ";<br>if (" + y + " < 10)<br>{<br>Console.WriteLine(\"Yes\");<br>}<br>else<br>{<br>Console.WriteLine(\"No\");<br>}<br>}";
+                var inputArr = [codeName, input1.value, input2.value, input3.value];
+                var json = JSON.stringify(inputArr);
+                console.log(json);
             }
         </script>
         <button class="toResultButton" type="submit">Sumbit</button>
