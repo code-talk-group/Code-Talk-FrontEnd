@@ -1,4 +1,4 @@
-﻿
+﻿@model  CodeTalk.Models.Form
 @{
     Layout = "_Layout";
 }
@@ -11,17 +11,17 @@
     <title>For Loop Form</title>
 </head>
 <body>
-    <form asp-action="Create" class="forLoop">
+    <form method="post" asp-action="Create" asp-controller="Forms" class="forLoop" asp-route-id="2">
         <h2 class="codeInput"><strong>Code Details</strong></h2>
         <hr />
         <div class="project">
             <input type="text" id="codeName" name="codeId" placeholder="Project Name" oninput="methodName()" required>
         </div>
         <div class="mName">
-            <input type="text" id="input1" placeholder="Method Name" name="method" oninput="methodName()" required>
+            <input type="text" id="MethodName" placeholder="Method Name" name="method" oninput="methodName()" required>
         </div>
         <div class="dataTp">
-            <input type="text" id="input2" placeholder="Array Name" name="dType" oninput="methodName()" required>
+            <input type="text" id="ArrayName" placeholder="Array Name" name="dType" oninput="methodName()" required>
         </div>
 
         <h2 id="projectName"></h2>
@@ -40,7 +40,7 @@
                 console.log(json);
             }
         </script>
-        <button class="toResultButton" type="submit">Sumbit</button>
+        <button class="toResultButton" type="submit">Submit</button>
     </form>
 </body>
 </html>
