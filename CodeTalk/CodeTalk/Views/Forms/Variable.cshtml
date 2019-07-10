@@ -1,4 +1,4 @@
-﻿
+﻿@model CodeTalk.Models.Form
 @{
     Layout = "_Layout";
 }
@@ -11,5 +11,44 @@
     <title>Variable Form</title>
 </head>
 <body>
+    <form method="post" asp-action="Create" asp-controller="Forms" class="variable" asp-route-id="4">
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="project">
+            <input type="text" id="codeName" name="codeId" placeholder="Project Name" oninput="methodName()" required>
+        </div>
+        <div class="mName">
+            <input type="text" id="MethodName" placeholder="Method Name" name="method" oninput="methodName()" required>
+        </div>
+        <div class="dataTp">
+            <input type="text" id="DataType" placeholder="Data Type" name="dType" oninput="methodName()" required>
+        </div>
+        <div class="mName">
+            <input type="text" id="VariableName" placeholder="Variable Name" name="method" oninput="methodName()" required>
+        </div>
+        <div class="dataTp">
+            <input type="text" id="VariableValue" placeholder="Variable Value" name="dType" oninput="methodName()" required>
+        </div>
+
+        <h2 id="projectName"></h2>
+        <hr />
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var codeName = document.getElementById("codeName").value;
+                var x = document.getElementById("MethodName").value;
+                var y = document.getElementById("DataType").value;
+                var z = document.getElementById("VariableName").value;
+                var m = document.getElementById("VariableValue").value;
+                document.getElementById("projectName").innerHTML = codeName;
+                document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( )" + "<br>{<br><br>" + y + " " + z + " = " + m + ";<br>}"
+                var inputArr = [codeName, MethodName.value, DataType.value, VariableName.value, VariableValue.value];
+                var json = JSON.stringify(inputArr);
+                console.log(json);
+            }
+        </script>
+        <button class="toResultButton" type="submit">Submit</button>
+    </form>
 </body>
 </html>
