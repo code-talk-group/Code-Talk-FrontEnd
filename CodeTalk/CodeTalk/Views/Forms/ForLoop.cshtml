@@ -14,8 +14,8 @@
     <form method="post" asp-action="Create" asp-controller="Forms" class="forLoop" asp-route-id="2">
         <h2 class="codeInput"><strong>Code Details</strong></h2>
         <hr />
-        <div class="mName">
-            <input type="text" id="CodeName" name="codeId" placeholder="Project Name" required>
+        <div class="project">
+            <input type="text" id="codeName" name="codeId" placeholder="Project Name" oninput="methodName()" required>
         </div>
         <div class="mName">
             <input type="text" id="MethodName" placeholder="Method Name" name="method" oninput="methodName()" required>
@@ -24,15 +24,20 @@
             <input type="text" id="ArrayName" placeholder="Array Name" name="dType" oninput="methodName()" required>
         </div>
 
-        <h2 class="resultCode"><strong>Your Code</strong></h2>
+        <h2 id="projectName"></h2>
         <hr />
         <p id="codeTalkCode"></p>
 
         <script>
             function methodName() {
-                var x = document.getElementById("MethodName").value;
-                var y = document.getElementById("ArrayName").value;
+                var codeName = document.getElementById("codeName").value;
+                var x = document.getElementById("input1").value;
+                var y = document.getElementById("input2").value;
+                document.getElementById("projectName").innerHTML = codeName;
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( int[] " + y + ")" + "<br>{<br><br>int counter = 0;<br>for (int i = 0; i < " + y + ".Length; i++)<br><br>{<br><br>counter++;<br>}<br>return counter;<br>}";
+                var inputArr = [codeName, input1.value, input2.value];
+                var json = JSON.stringify(inputArr);
+                console.log(json);
             }
         </script>
         <button class="toResultButton" type="submit">Submit</button>
