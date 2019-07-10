@@ -11,5 +11,35 @@
     <title>If Statement Form</title>
 </head>
 <body>
+    <form asp-action="Create" class="ifStatement">
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="mName">
+            <input type="text" id="codeName" name="codeId" placeholder="Project Name" required>
+        </div>
+        <div class="mName">
+            <input type="text" id="input1" placeholder="Method Name" name="method" oninput="methodName()" required>
+        </div>
+        <div class="pName">
+            <input type="text" id="input2" placeholder="Parameter Name" name="param" oninput="methodName()" required>
+        </div>
+        <div class="intVal">
+            <input type="text" id="input3" placeholder="Integer Value" name="intVal" oninput="methodName()" required>
+        </div>
+
+        <h2 class="resultCode"><strong>Your Code</strong></h2>
+        <hr />
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var x = document.getElementById("input1").value;
+                var y = document.getElementById("input2").value;
+                var z = document.getElementById("input3").value;
+                document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (int " + y + ")<br>" + "<br>{<br><br>" + y + " = " + z + ";<br>if (" + y + " < 10)<br>{<br>Console.WriteLine(\"Yes\");<br>}<br>else<br>{<br>Console.WriteLine(\"No\");<br>}<br>}";
+            }
+        </script>
+        <button class="toResultButton" type="submit">Sumbit</button>
+    </form>
 </body>
 </html>
