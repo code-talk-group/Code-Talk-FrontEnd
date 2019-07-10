@@ -25,7 +25,7 @@ namespace CodeTalk.Controllers
 
 
                 client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                HttpResponseMessage response = await client.GetAsync($"default");
+                HttpResponseMessage response = await client.GetAsync($"default/4");
 
                 var stringResult = await response.Content.ReadAsStringAsync();
                 Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
@@ -38,6 +38,40 @@ namespace CodeTalk.Controllers
 
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create(int id/*[Bind("Option, MethodName, ArrayName, CodeName")] Results results*/)
+        {
+           // int Option = results.Option;
+            if (ModelState.IsValid)
+            {
+                using (var client = new HttpClient())
+                {
+
+
+                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                    HttpResponseMessage response = await client.GetAsync($"default/{id}");
+
+                    var stringResult = await response.Content.ReadAsStringAsync();
+                    Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
+
+                    return View("Index", new Results
+                    {
+                        ID = rawSentence.ID,
+                        baseString = rawSentence.baseString,
+                        Option = rawSentence.Option
+                    });
+
+                }
+            }
+            else
+            {
+                return null;    
+            }
+        }
+
+
+
         public IActionResult Function()
             {
                 return View();
