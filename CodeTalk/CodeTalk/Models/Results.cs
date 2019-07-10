@@ -1,0 +1,23 @@
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+
+namespace CodeTalk.Models
+{
+    public class Results
+    {
+        public string Code { get; set; }
+
+        public string baseString { get; set; }
+
+        public int ID { get; set; }
+
+        public int Option { get; set; }
+
+        public ICollection<Results> ApiResult { get; set; }
+    }
+
+}
