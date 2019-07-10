@@ -20,6 +20,6 @@ namespace CodeTalk.Models
         [Display(Name = "If Statement")]
         IfStatement,
         [Display(Name = "For Loop")]
-        ForLoop
+        ForLoop 
     }
 }
