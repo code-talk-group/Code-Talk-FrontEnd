@@ -30,6 +30,7 @@
                 var x = document.getElementById("input1").value;
                 var y = document.getElementById("input2").value;
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( int[] " + y + ")" + "<br>{<br><br>int counter = 0;<br>for (int i = 0; i < " + y + ".Length; i++)<br><br>{<br><br>counter++;<br>}<br>return counter;<br>}";
+                var inputArr = [input1.value, input2.value];
             }
         </script>
         <button class="toResultButton" type="submit">Sumbit</button>
