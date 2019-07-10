@@ -41,7 +41,6 @@
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (int " + y + ")<br>" + "<br>{<br><br>" + y + " = " + z + ";<br>if (" + y + " < 10)<br>{<br>Console.WriteLine(\"Yes\");<br>}<br>else<br>{<br>Console.WriteLine(\"No\");<br>}<br>}";
                 var inputArr = [codeName, MethodName.value, ParameterName.value, IntegerValue.value];
                 var json = JSON.stringify(inputArr);
-                console.log(json);
             }
         </script>
         <button class="toResultButton" type="submit">Sumbit</button>

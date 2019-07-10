@@ -37,7 +37,6 @@
                 document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( int[] " + y + ")" + "<br>{<br><br>int counter = 0;<br>for (int i = 0; i < " + y + ".Length; i++)<br><br>{<br><br>counter++;<br>}<br>return counter;<br>}";
                 var inputArr = [codeName, MethodName.value, ArrayName.value];
                 var json = JSON.stringify(inputArr);
-                console.log(json);
             }
         </script>
         <button class="toResultButton" type="submit">Submit</button>
