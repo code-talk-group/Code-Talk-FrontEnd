@@ -11,9 +11,12 @@
     <title>For Loop Form</title>
 </head>
 <body>
-    <div class="forLoop">
+    <form asp-action="Create" class="forLoop">
         <h2 class="codeInput"><strong>Code Details</strong></h2>
         <hr />
+        <div class="mName">
+            <input type="text" id="saveId" name="codeId" placeholder="Project Name" required>
+        </div>
         <div class="mName">
             <input type="text" id="input1" placeholder="Method Name" name="method" oninput="methodName()" required>
         </div>
@@ -34,6 +37,6 @@
             }
         </script>
         <button class="toResultButton" type="submit">Sumbit</button>
-    </div>
+    </form>
 </body>
 </html>
