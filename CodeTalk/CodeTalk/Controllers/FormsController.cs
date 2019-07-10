@@ -13,6 +13,10 @@ namespace CodeTalk.Controllers
 {
     public class FormsController : Controller
     {
+        /// <summary>
+        /// Sends input from form data to api and gets back a sentence representing the data sent
+        /// </summary>
+        /// <returns>Sentence that represents the data send</returns>
         [HttpGet]
         public  async Task<IActionResult> Index()
         {
