@@ -5,41 +5,75 @@
 
 header {
     height: 240px;
-    background-image: url(https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=12600);
+    background-image: url(../Assets/yeah.jpg);
 }
 
 footer {
     height: 120px;
-    background-image: url(https://images.pexels.com/photos/325229/pexels-photo-325229.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=12600);
+    background-image: url(../Assets/yeah.jpg);
 }
 
 section {
     height: 400px;
-    background-color: ghostwhite;
+    margin: 8px;
+    border: solid 4px black;
+    background-image: url();
 }
 
 .function {
-    height: 400px;
-    display: block;
+    min-height: 650px;
     margin: 8px;
     border: solid 4px black;
-    font-size: 20px;
+    font-family: Verdana;
 }
 
 .forLoop {
-    height: 400px;
-    display: block;
+    min-height: 650px;
     margin: 8px;
     border: solid 4px black;
-    font-size: 20px;
 }
 
-label {
+.mName {
+    margin-left: 43%;
+    padding: 0.5rem;
+}
+
+.pName {
+    margin-left: 43%;
+    padding: 0.5rem;
+}
+
+.dataTp {
+    margin-left: 43%;
+    padding: 0.5rem;
+}
+
+h2 {
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 1.5em;
+}
+
+#codeTalkCode {
+    margin-left: 36%;
+    font-size: 1.2em;
+}
+
+.control-label {
     font-family: 'Oswald', sans-serif;
-    color: #FFA338;
+    color: black;
     font-size: 30px;
     margin-left: -12%;
-    text-shadow: 1px 1px 1px black;
+    text-shadow: 1px 1px 1px #CD6695;
+}
+
+.toResultButton {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left:45%;
 }
 
 form {
@@ -142,8 +176,4 @@ button:active {
     text-align: center;
     vertical-align: middle;
     line-height: 240px;
-}
-
-body {
-
 }
