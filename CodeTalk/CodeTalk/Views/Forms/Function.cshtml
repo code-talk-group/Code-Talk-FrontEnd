@@ -12,19 +12,13 @@
 </head>
 <body>
     <div class="function">
-        <p>Enter a method name: </p>
+        <div class="q">
+        <p>Enter a method name: <input type="text" id="input1" placeholder="EX: MyMethod" oninput="methodName()"></p>
+        <p>Enter a data type: <input type="text" id="input2" placeholder="EX: int/bool/string" oninput="methodName()"></p>
+        <p>Enter a parameter name: <input type="text" id="input3" placeholder="EX: newInt" oninput="methodName()"></p>
+        </div>
 
-        <input type="text" id="input1" oninput="methodName()">
-
-        <p>Enter a data type (int, bool, string): </p>
-
-        <input type="text" id="input2" oninput="methodName()">
-
-        <p>Enter a parameter name: </p>
-
-        <input type="text" id="input3" oninput="methodName()">
-
-
+        <h2 class="resultCode">Your Code:</h2>
         <p id="codeTalkCode"></p>
 
         <script>
