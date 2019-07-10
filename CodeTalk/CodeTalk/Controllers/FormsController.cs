@@ -32,19 +32,15 @@ namespace CodeTalk.Controllers
                 baseString = rawSentence.baseString,
                 Option = rawSentence.Option
                 });
-
-                //if (response.IsSuccessStatusCode)
-                //{
-
-                //    var apiResult = JObject.Parse(await response.Content.ReadAsStringAsync());
-                //    return View(apiResult);
-                //}
-                //else
-                //{
-                //    return null;
-                //}
             }
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Create()
+        {
+            return RedirectToAction(nameof(Index));
+        }
+
         public IActionResult Function()
             {
                 return View();
