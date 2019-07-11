@@ -27,7 +27,7 @@
             <form class="idxForm" method="post">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 <div class="form-group">
-                    <label asp-for="FormType" class="control-label">Build Your Method</label>
+                    <label asp-for="FormType" class="control-label">Begin</label>
                     <select asp-for="FormType" asp-items="@Html.GetEnumSelectList(typeof(CodeTalk.Models.FormType))" class="form-control"></select>
                     <span asp-validation-for="FormType" class="text-danger"></span>
                 </div>
