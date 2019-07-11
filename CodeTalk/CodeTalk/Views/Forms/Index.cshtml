@@ -1,5 +1,7 @@
 ﻿@model CodeTalk.Models.Results;
-
+@{
+    Layout = "_Layout";
+}
 
 <!DOCTYPE html>
 
@@ -13,37 +15,32 @@
     <title>Form Home Page</title>
 </head>
 <body>
-    <header>
-        <div class="logo">Code Talk</div>
-    </header>
-    <a href="@Url.Action("Index", "Results")">All Code Snippets</a>
-    <div id="tablecontainer">
-        <table class="table">
-            <tbody> 
-                <tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Code)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.Code)
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => Model.returnString)
-                    </td>
+    <div id="resultContain">
+        <div id="tablecontainer">
+            <h2 class="resultTitle">Results</h2>
+            <table class="table">
+                <tbody>
+                    @*<tr>
+                            <td class="text-table">
+                                @Html.DisplayNameFor(model => model.Code)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => Model.Code)
+                            </td>
+                        </tr>*@
+                    <tr>
+                        <td class="text-table">
+                            @Html.DisplayFor(modelItem => Model.baseString)
+                        </td>
 
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
-                        <a asp-action="Delete" asp-route-id="@Model.ID">Delete</a>
-                    </td>
-                </tr>
-                
-            </tbody>
-        </table>
-                </div>
-        <footer>
-            <div class="copyright">Copyright 2019 &copy</div>
-        </footer>
+                        <td class="table-options">
+                            <a asp-action="Edit" asp-route-id="@Model.ID">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@Model.ID">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>
