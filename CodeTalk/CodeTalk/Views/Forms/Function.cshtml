@@ -12,19 +12,21 @@
 </head>
 <body>
     <form method="post" asp-action="CreateFunction" asp-controller="Forms" class="function" asp-route-id="1">
+        <input type="hidden" asp-for="ID" />
+
         <h2 class="codeInput"><strong>Code Details</strong></h2>
         <hr />
         <div class="project">
-            <input asp-for="CodeName" type="text" id="codeName"  placeholder="Project Name" oninput="methodName()" required>
+            <input asp-for="CodeName" type="text" id="codeName" placeholder="Project Name" oninput="methodName()" required>
         </div>
         <div class="mName">
-            <input asp-for="MethodName" type="text" id="MethodName" placeholder="Method Name"  oninput="methodName()" required>
+            <input asp-for="MethodName" type="text" id="MethodName" placeholder="Method Name" oninput="methodName()" required>
         </div>
         <div class="pName">
-            <input asp-for="DataType" type="text" id="DataType" placeholder="Data Type"  oninput="methodName()" required>
+            <input asp-for="DataType" type="text" id="DataType" placeholder="Data Type" oninput="methodName()" required>
         </div>
         <div class="intVal">
-            <input asp-for="ParameterName" type="text" id="ParameterName" placeholder="Parameter Name"  oninput="methodName()" required>
+            <input asp-for="ParameterName" type="text" id="ParameterName" placeholder="Parameter Name" oninput="methodName()" required>
         </div>
 
 

@@ -87,9 +87,10 @@ namespace CodeTalk.Controllers
         /// <param name="id">End point option for the api</param>
         /// <returns>New page with sentence populated with data sent</returns>
         [HttpPost]
-        public async Task<IActionResult> CreateFunction(int id, [Bind("MethodName, DataType, CodeName, ParameterName")] Function function)
+        public async Task<IActionResult> CreateFunction(int id, [Bind("ID, MethodName, DataType, CodeName, ParameterName")] Function function)
         {
             Function sendResults = new Function();
+            sendResults.ID = function.ID;
             sendResults.MethodName = function.MethodName;
             sendResults.CodeName = function.CodeName;
             sendResults.DataType = function.DataType;
@@ -208,7 +209,6 @@ namespace CodeTalk.Controllers
                 return null;
             }
         }
-
 
 
         /// <summary>
