@@ -210,7 +210,6 @@ namespace CodeTalk.Controllers
         }
 
 
-
         /// <summary>
         /// Directs to Function Form View from Home View drop down
         /// </summary>

@@ -11,11 +11,6 @@ namespace CodeTalk.Controllers
 {
     public class ResultsController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-
-        //}
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -32,14 +27,25 @@ namespace CodeTalk.Controllers
 
                 return View(rawSentence);
 
-                //return View("Index", new ApiResult
-                //{
-                    //ID = rawSentence.ID,
-                    //returnString = rawSentence.returnString,
-                    //Option = rawSentence.Option
-                //});
-
             }
         }
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var client = new HttpClient())
+            {
+
+
+                client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                HttpResponseMessage response = await client.GetAsync($"user/{id}");
+
+                return RedirectToAction(nameof(Index));
+            }
+
+        }
+
+        //public IActionResult Delete()
+        //{
+        //    return View();
+        //}
     }
 }
