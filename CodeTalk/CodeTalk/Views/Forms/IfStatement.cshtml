@@ -1,4 +1,5 @@
-﻿
+﻿@model CodeTalk.Models.IfStatement
+
 @{
     Layout = "_Layout";
 }
@@ -11,20 +12,20 @@
     <title>If Statement Form</title>
 </head>
 <body>
-    <form method="post" asp-action="Create" asp-controller="Forms" class="ifStatement" asp-route-id="3">
+    <form method="post" asp-action="CreateIfStatement" asp-controller="Forms" class="ifStatement" asp-route-id="3">
         <h2 class="codeInput"><strong>Code Details</strong></h2>
         <hr />
         <div class="project">
-            <input type="text" id="codeName" name="codeId" placeholder="Project Name" required>
+            <input asp-for="CodeName" type="text" id="codeName"  placeholder="Project Name" required>
         </div>
         <div class="mName">
-            <input type="text" id="MethodName" placeholder="Method Name" name="method" oninput="methodName()" required>
+            <input asp-for="MethodName" type="text" id="MethodName" placeholder="Method Name"  oninput="methodName()" required>
         </div>
         <div class="pName">
-            <input type="text" id="ParameterName" placeholder="Parameter Name" name="param" oninput="methodName()" required>
+            <input asp-for="ParameterName"type="text" id="ParameterName" placeholder="Parameter Name"  oninput="methodName()" required>
         </div>
         <div class="intVal">
-            <input type="text" id="IntegerValue" placeholder="Integer Value" name="intVal" oninput="methodName()" required>
+            <input asp-for="IntegerValue" type="text" id="IntegerValue" placeholder="Integer Value"  oninput="methodName()" required>
         </div>
 
         <h2 id="projectName"></h2>
