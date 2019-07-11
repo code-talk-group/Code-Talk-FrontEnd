@@ -39,7 +39,7 @@
                 var y = document.getElementById("ParameterName").value;
                 var z = document.getElementById("IntegerValue").value;
                 document.getElementById("projectName").innerHTML = codeName;
-                document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (int " + y + ")<br>" + "<br>{<br><br>" + y + " = " + z + ";<br>if (" + y + " < 10)<br>{<br>Console.WriteLine(\"Yes\");<br>}<br>else<br>{<br>Console.WriteLine(\"No\");<br>}<br>}";
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static void " + x + "(int " + y + ")<br><br>{<br><br></pre><pre>  " + y + " = " + z + ";</pre><br><br><pre>  if (" + y + " < 10)<br><br><pre>  {<br><br>    Console.WriteLine(\"Yes\");</pre><br><br>  }<br><br>  else<br><br>  {<br><br>    Console.WriteLine(\"No\");<br><br>  }<br><br>}";
                 var inputArr = [codeName, MethodName.value, ParameterName.value, IntegerValue.value];
                 var json = JSON.stringify(inputArr);
             }

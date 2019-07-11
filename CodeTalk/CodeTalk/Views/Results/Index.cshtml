@@ -2,7 +2,7 @@
 
 
 @{
-    Layout = null;
+    Layout = "_Layout";
 }
 
 <!DOCTYPE html>
@@ -13,26 +13,27 @@
     <title>Result Home</title>
 </head>
 <body>
-    <div id="tablecontainer">
-        <table class="table">
-            <tbody>
+    <section id="resultContain">
+        <div id="tablecontainer">
+            <table class="table">
+                <tbody>
 
-                @*<tr>
-                    <td>
-                        @Html.DisplayNameFor(model => model.Code)
-                    </td>
-                </tr>*@
-                @foreach (var item in Model)
-                {
                     @*<tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Code)
-                        </td>
-                    </tr>*@
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.returnString)
-                        </td>
+                            <td>
+                                @Html.DisplayNameFor(model => model.Code)
+                            </td>
+                        </tr>*@
+                    @foreach (var item in Model)
+                    {
+                        @*<tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Code)
+                                </td>
+                            </tr>*@
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.returnString)
+                            </td>
 
                         <td>
                             <a asp-action="Edit" asp-controller="Results" asp-route-id="@item.ID">Edit</a> |
@@ -46,5 +47,5 @@
     </div>
 
     <p>Results Page</p>
-</body>
+  </body>
 </html>
