@@ -39,7 +39,7 @@
                 var y = document.getElementById("DataType").value;
                 var z = document.getElementById("ParameterName").value;
                 document.getElementById("projectName").innerHTML = codeName;
-                document.getElementById("codeTalkCode").innerHTML = "<br>public static void " + x + " (" + y + " " + z + ")<br>" + "<br>{<br><br>Method statements and arguments defined here...<br><br>}";
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static void " + x + "(" + y + " " + z + ")<br><br>  {<br><br></pre><pre>   Method statements and arguments defined here...<br><br></pre><pre>  }</pre>";
                 var inputArr = [codeName, MethodName.value, DataType.value, ParameterName.value];
                 var json = JSON.stringify(inputArr);
             }

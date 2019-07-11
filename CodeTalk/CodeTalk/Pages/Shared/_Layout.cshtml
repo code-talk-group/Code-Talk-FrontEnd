@@ -9,9 +9,14 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <header>
-        <div class="logo">Code Talk</div>
-    </header>
+        <header class="header">
+            <div class="logo"><a href="@Url.Action("Index","Home")">Code Talk</a></div>
+            <ul class="viewNav">
+                <li><a href="@Url.Action("Index", "Results")">All Results</a></li>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li class="slogan">Talk the Code Talk</li>
+            </ul>
+        </header>
     <div>
         @RenderBody()
     </div>
