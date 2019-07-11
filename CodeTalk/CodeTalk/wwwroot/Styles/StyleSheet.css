@@ -1,16 +1,33 @@
 ﻿@font-face {
+    font-family: 'Calvier';
+    src: url(../Assets/Calvier.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Amethyst';
+    src: url(../Assets/Amethyst.ttf) format('truetype');
+}
+
+@font-face {
     font-family: 'sberg';
-    src: url(../Assets/Schwarzenberg.ttf) format('truetype');
+    src: url(../Assets/Schwarzenberg.ttf);
+}
+
+body {
+    background-image: url(../Assets/yeah.jpg);
+    background-size: cover;
 }
 
 header {
-    height: 240px;
-    background-image: url(../Assets/yeah.jpg);
+    background-image: url(https://webgradients.com/public/webgradients_png/026%20Saint%20Petersburg.png);
+    opacity: 0.95;
 }
 
 footer {
-    height: 120px;
-    background-image: url(../Assets/yeah.jpg);
+    height: 160px;
+    color: whitesmoke;
+    margin-top: 2%;
+    display: flex;
 }
 
 input[type=text] {
@@ -25,34 +42,40 @@ input[type=text] {
 }
 
     section {
-    background-color: #FAFAFA;
+    background-color: transparent;
     margin: 8px;
     height: 400px;
-    border: solid 8px transparent;
-    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
 .function {
     background-color: #FAFAFA;
+    opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
 .forLoop {
     background-color: #FAFAFA;
+    opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+}
+
+.variable {
+    background-color: #FAFAFA;
+    opacity: 0.95;
+    min-height: 650px;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
 .ifStatement {
     background-color: #FAFAFA;
+    opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
@@ -83,6 +106,7 @@ input[type=text] {
 }
 
 h2 {
+    font-family: Calvier;
     margin-top: 5%;
     text-align: center;
     width: 100%;
@@ -94,14 +118,16 @@ h2 {
 #codeTalkCode {
     margin-left: 36%;
     font-size: 1.2em;
+    font-family: 'Space Mono', monospace;
+    margin-top: 8%;
 }
 
 .control-label {
-    font-family: 'Oswald', sans-serif;
-    color: black;
-    font-size: 30px;
-    margin-left: -12%;
-    text-shadow: 1px 1px 1px #CD6695;
+    font-family: Calvier;
+    color: whitesmoke;
+    font-size: 32px;
+    margin-left: -30%;
+    text-shadow: 1px 1px 1px black;
 }
 
 .toResultButton {
@@ -113,9 +139,9 @@ h2 {
 .idxForm {
     display: block;
     position: absolute;
-    top: 50%;
     left: 50%;
     margin: 0px -50px;
+    margin-top: 8%;
 }
 
 select {
@@ -148,7 +174,7 @@ select {
     }
 
     select:focus {
-        border-color: orange;
+        border-color: white;
         box-shadow: #fc0 0 0 3px;
     }
 
@@ -167,20 +193,20 @@ select {
         }
 
 button {
-    margin-left: 5%;
-    box-shadow: inset 0px 1px 0px 0px #fff6af;
-    background: linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-    background-color: #ffec64;
+    margin-left: 0%;
+    box-shadow: inset 0px 1px 0px 0px white;
+    background: linear-gradient(to bottom, whitesmoke 5%, gray 100%);
+    background-color: rgba(255,255,255,.5);
     border-radius: 4px;
-    border: 1px solid #ffaa22;
+    border: 1px solid black;
     cursor: pointer;
-    color: #333333;
-    font-family: Arial;
+    color: whitesmoke;
+    font-family: 'Open Sans', sans-serif;
     font-size: 16px;
     font-weight: bold;
     padding: 10px 30px;
     text-decoration: none;
-    text-shadow: -1px 1px 0px #ffee66;
+    text-shadow: -1px 1px 0px black;
 }
 
 button:hover {
@@ -196,19 +222,129 @@ button:active {
 
 .copyright {
     color: white;
-    text-align: center;
-    vertical-align: bottom;
-    line-height: 100px;
+    margin-left: 45%;
+    margin-bottom: 2%;
+    align-self: flex-end;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.logo {
-    font-family: sberg;
-    font-size: 20vw;
+.homeLogo {
+    font-family: Calvier;
+    font-size: 14em;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
     text-align: center;
     vertical-align: middle;
-    line-height: 240px;
-    text-decoration: underline transparent;
+    margin: 10%;
 }
+
+.logo {
+    font-family: Calvier;
+    font-size: 3em;
+    color: black;
+    opacity: 0.8;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 10%;
+}
+
+.slogan {
+    font-family: Amethyst;
+    margin-left: 16%;
+    font-size: 1em;
+    color: black;
+    opacity: 0.8;
+}
+
+.border {
+    border: solid 8px whitesmoke;
+    margin: 12%;
+    margin-top: -5%;
+    height: 100%;
+    /*border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;*/
+}
+
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    .navLogo a,
+    .viewNav a {
+        padding: 5px 10px;
+        text-transform: uppercase;
+        text-align: center;
+        display: block;
+    }
+
+.viewNav a {
+    color: black;
+    font-size: 1em;
+}
+
+li {
+    margin-left: 5%;
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: lightseagreen;
+}
+
+a:active {
+    text-decoration: underline;
+    color: lightseagreen;
+}
+
+.header {
+    font-family: 'Open Sans', sans-serif;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+    border-radius: 5px;
+}
+
+.header, .viewNav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+td, th {
+        border: 1px solid black;
+        padding: 8px;
+        background-color: #FAFAFA;
+    }
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FAFAFA;
+    color: white;
+}
+
+.tablecontainer {
+    background-color: #FAFAFA;
+    opacity: 0.95;
+    min-height: 650px;
+    margin: 8px;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+}
+

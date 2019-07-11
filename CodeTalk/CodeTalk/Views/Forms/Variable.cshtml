@@ -42,7 +42,7 @@
                 var z = document.getElementById("VariableName").value;
                 var m = document.getElementById("VariableValue").value;
                 document.getElementById("projectName").innerHTML = codeName;
-                document.getElementById("codeTalkCode").innerHTML = "<br>public static int " + x + " ( )" + "<br>{<br><br>" + y + " " + z + " = " + m + ";<br>}"
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static int " + x + "()<br><br>{<br><br>  </pre>" + y + " " + z + " = " + m + ";<br><br>}"
                 var inputArr = [codeName, MethodName.value, DataType.value, VariableName.value, VariableValue.value];
                 var json = JSON.stringify(inputArr);
             }
