@@ -43,8 +43,8 @@ namespace CodeTalkTests
         public void CanGetResultBaseString()
         {
             Results testResult = new Results();
-            testResult.baseString = "Test String";
-            Results.Equals("Test String", testResult.baseString);
+            testResult.returnString = "Test String";
+            Results.Equals("Test String", testResult.returnString);
         }
 
         [Fact]
@@ -77,9 +77,9 @@ namespace CodeTalkTests
         public void CanSetResultBaseString()
         {
             Results testResult = new Results();
-            testResult.baseString = "First String";
-            testResult.baseString = "Test String";
-            Results.Equals("Test String", testResult.baseString);
+            testResult.returnString = "First String";
+            testResult.returnString = "Test String";
+            Results.Equals("Test String", testResult.returnString);
         }
 
         [Fact]

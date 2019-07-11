@@ -16,6 +16,7 @@
     <header>
         <div class="logo">Code Talk</div>
     </header>
+    <a href="@Url.Action("Index", "Results")">All Code Snippets</a>
     <div id="tablecontainer">
         <table class="table">
             <tbody> 
@@ -29,7 +30,7 @@
                 </tr>
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => Model.baseString)
+                        @Html.DisplayFor(modelItem => Model.returnString)
                     </td>
 
                     <td>
