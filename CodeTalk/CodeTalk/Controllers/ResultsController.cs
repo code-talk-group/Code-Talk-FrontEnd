@@ -36,16 +36,36 @@ namespace CodeTalk.Controllers
 
 
                 client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                HttpResponseMessage response = await client.GetAsync($"user/{id}");
+                HttpResponseMessage response = await client.DeleteAsync($"user/{id}");
+                response.EnsureSuccessStatusCode();
+
 
                 return RedirectToAction(nameof(Index));
             }
 
         }
 
-        //public IActionResult Delete()
-        //{
-        //    return View();
-        //}
+        public async Task<IActionResult> Edit(int id)
+        {
+            using (var client = new HttpClient())
+            {
+
+
+                client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                HttpResponseMessage response = await client.GetAsync($"user/{id}");
+
+                var stringResult = await response.Content.ReadAsStringAsync();
+                var rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
+
+                return View(rawSentence);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("baseString")] Results results)
+        {
+            return RedirectToAction(nameof(Index));
+
+        }
     }
 }
