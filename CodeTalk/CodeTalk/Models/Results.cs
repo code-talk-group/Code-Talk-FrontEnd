@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 
 namespace CodeTalk.Models
 {
-    [Bind("Option, MethodName, ArrayName, CodeName")]
     public class Results
     {
+        public List<ApiResult> ApiResult { get; set; }
         public string Code { get; set; }
-
         public string baseString { get; set; }
+
+        public string returnString { get; set; }
 
         public int ID { get; set; }
 
@@ -22,6 +23,13 @@ namespace CodeTalk.Models
         public string ArrayName { get; set; }
         public string CodeName { get; set; }
 
+    }
+    public class ApiResult
+    {
+        public int ID { get; set; }
+        public string returnString { get; set; }
+        public string Code { get; set; }
+        public string CodeName { get; set; }
     }
 
 }

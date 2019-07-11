@@ -1,6 +1,9 @@
-﻿
+﻿@*@model IEnumerable<CodeTalk.Models.Results>;*@
+@model List<CodeTalk.Models.ApiResult>;
+
+
 @{
-    Layout = "_Layouts";
+    Layout = null;
 }
 
 <!DOCTYPE html>
@@ -11,6 +14,37 @@
     <title>Result Home</title>
 </head>
 <body>
-   
+    <div id="tablecontainer">
+        <table class="table">
+            <tbody>
+
+                @*<tr>
+                    <td>
+                        @Html.DisplayNameFor(model => model.Code)
+                    </td>
+                </tr>*@
+                @foreach (var item in Model)
+                {
+                    @*<tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Code)
+                        </td>
+                    </tr>*@
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.returnString)
+                        </td>
+
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.CodeName">Edit</a> |
+                            <a asp-action="Delete" asp-route-id="@item.CodeName">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <p>Results Page</p>
 </body>
 </html>
