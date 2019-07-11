@@ -34,7 +34,7 @@
                 var x = document.getElementById("MethodName").value;
                 var y = document.getElementById("ArrayName").value;
                 document.getElementById("projectName").innerHTML = codeName;
-                document.getElementById("codeTalkCode").innerHTML = "<pre>public static int " + x + " ( int[] " + y + ")</pre>" + "<pre><br><br>{<br><br>    int counter = 0;<br><br>    for (int i = 0; i < " + y + ".Length; i++)<br><br>    {<br><br>        counter++;<br><br>    }<br><br>    return counter;<br><br>}</pre>";
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static int " + x + "( int[] " + y + ")</pre>" + "<pre><br><br>{<br><br>    int counter = 0;<br><br>    for (int i = 0; i < " + y + ".Length; i++)<br><br>    {<br><br>        counter++;<br><br>    }<br><br>    return counter;<br><br>}</pre>";
                 var inputArr = [codeName, MethodName.value, ArrayName.value];
                 var json = JSON.stringify(inputArr);
             }
