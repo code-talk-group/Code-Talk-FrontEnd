@@ -26,7 +26,10 @@ namespace CodeTalk.Models
     }
     public class ApiResult
     {
+        public int ID { get; set; }
         public string returnString { get; set; }
+        public string Code { get; set; }
+        public string CodeName { get; set; }
     }
 
 }
