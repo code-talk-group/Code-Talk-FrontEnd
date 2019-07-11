@@ -8,6 +8,11 @@
     src: url(../Assets/Amethyst.ttf) format('truetype');
 }
 
+@font-face {
+    font-family: 'sberg';
+    src: url(../Assets/Schwarzenberg.ttf);
+}
+
 body {
     background-image: url(../Assets/yeah.jpg);
     background-size: cover;
@@ -46,8 +51,7 @@ input[type=text] {
     background-color: #FAFAFA;
     opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
@@ -55,8 +59,7 @@ input[type=text] {
     background-color: #FAFAFA;
     opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
@@ -64,8 +67,7 @@ input[type=text] {
     background-color: #FAFAFA;
     opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
@@ -73,8 +75,7 @@ input[type=text] {
     background-color: #FAFAFA;
     opacity: 0.95;
     min-height: 650px;
-    margin: 8px;
-    border: solid 8px transparent;
+    border: solid 20px transparent;
     border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
 }
 
@@ -125,8 +126,8 @@ h2 {
     font-family: Calvier;
     color: whitesmoke;
     font-size: 32px;
-    margin-left: -32%;
-    text-shadow: 1px 1px 1px #F2975E;
+    margin-left: -30%;
+    text-shadow: 1px 1px 1px black;
 }
 
 .toResultButton {
@@ -257,11 +258,11 @@ button:active {
 }
 
 .border {
-    border: solid 8px transparent;
+    border: solid 8px whitesmoke;
     margin: 12%;
     margin-top: -5%;
     height: 100%;
-    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+    /*border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;*/
 }
 
 .navbar {
@@ -323,3 +324,27 @@ a:active {
     align-items: center;
     width: 100%;
 }
+
+td, th {
+        border: 1px solid black;
+        padding: 8px;
+        background-color: #FAFAFA;
+    }
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #FAFAFA;
+    color: white;
+}
+
+.tablecontainer {
+    background-color: #FAFAFA;
+    opacity: 0.95;
+    min-height: 650px;
+    margin: 8px;
+    border: solid 8px transparent;
+    border-image: url(https://images.pexels.com/photos/1789968/pexels-photo-1789968.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) 30 round;
+}
+
