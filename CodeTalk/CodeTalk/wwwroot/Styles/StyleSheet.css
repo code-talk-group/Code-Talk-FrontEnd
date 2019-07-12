@@ -324,7 +324,7 @@ a:active {
     width: 100%;
 }
 
-table {
+.resultContainer {
     background-color: #FAFAFA;
     opacity: 0.95;
     min-height: 400px;
@@ -347,11 +347,16 @@ table {
 }
 
 .resultTitle {
+    text-align: center;
     color: whitesmoke;
+    font-size: 3em;
+    font-family: Calvier;
     text-shadow: 1px 1px 1px black;
+    margin: 3%;
 }
 
-tbody {
-    margin: 3%;
+.resultSentence {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
