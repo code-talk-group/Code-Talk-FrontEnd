@@ -81,27 +81,27 @@ section {
 
 .project {
     margin-top: 5%;
-    margin-left: 40%;
+    margin-left: 39%;
     padding: 0.5rem;
 }
 
 .mName {
-    margin-left: 40%;
+    margin-left: 39%;
     padding: 0.5rem;
 }
 
 .pName {
-    margin-left: 40%;
+    margin-left: 39%;
     padding: 0.5rem;
 }
 
 .dataTp {
-    margin-left: 40%;
+    margin-left: 39%;
     padding: 0.5rem;
 }
 
 .intVal {
-    margin-left: 40%;
+    margin-left: 39%;
     padding: 0.5rem
 }
 
@@ -133,7 +133,7 @@ h2 {
 .toResultButton {
     margin-top: 10%;
     margin-bottom: 10%;
-    margin-left: 46%;
+    margin-left: 45%;
 }
 
 .idxForm {
@@ -179,7 +179,7 @@ select {
     }
 
 select {
-    margin-left: -17%;
+    margin-left: -22%;
     margin-top: 20%;
     margin-bottom: 20%;
     color: rgba(255,255,255,.7);
