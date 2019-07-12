@@ -48,10 +48,13 @@ namespace CodeTalk.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateForLoop(int id, [Bind("ID, MethodName, ArrayName, CodeName")] ForLoop forLoop)
         {
-            ForLoopForm forLoopForm = new ForLoopForm(forLoop.MethodName, forLoop.ArrayName);
+            ForLoop sendForLoop = new ForLoop();
+            sendForLoop.ID = 2;
+            sendForLoop.MethodName = forLoop.MethodName;
+            sendForLoop.ArrayName = forLoop.ArrayName;
+            sendForLoop.CodeName = forLoop.CodeName;
 
-            string inputs = JsonConvert.SerializeObject(forLoopForm);
-            ApiData apiData = new ApiData(forLoop.ID, forLoop.CodeName, inputs);
+            string inputs = JsonConvert.SerializeObject(sendForLoop);
 
             if (ModelState.IsValid)
             {
@@ -59,9 +62,9 @@ namespace CodeTalk.Controllers
                 {
 
 
-                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                    HttpResponseMessage response = await client.PostAsync(client.BaseAddress, new StringContent(inputs, Encoding.UTF8, "application/json"));
-                    //HttpResponseMessage response = await client.GetAsync($"default/{id}");
+                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/default/");
+                    string uri = "https://codetalkapi.azurewebsites.net/api/default/";
+                    HttpResponseMessage response = await client.PostAsync(uri, new StringContent(inputs, Encoding.UTF8, "application/json"));
 
 
                     var stringResult = await response.Content.ReadAsStringAsync();
@@ -70,7 +73,7 @@ namespace CodeTalk.Controllers
                     return View("Index", new Results
                     {
                         ID = rawSentence.ID,
-                        baseString = rawSentence.baseString,
+                        returnString = rawSentence.returnString,
                         Option = rawSentence.Option
                     });
 
@@ -101,7 +104,6 @@ namespace CodeTalk.Controllers
 
             string inputs = JsonConvert.SerializeObject(sendFunction);
 
-            //ApiData apiData = new ApiData(function.ID, function.CodeName, inputs);
 
             if (ModelState.IsValid)
             {
@@ -112,11 +114,6 @@ namespace CodeTalk.Controllers
                     client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/default/");
                     string uri = "https://codetalkapi.azurewebsites.net/api/default/";
                     HttpResponseMessage response = await client.PostAsync(uri, new StringContent(inputs, Encoding.UTF8, "application/json"));
-
-                    //(client.BaseAddress, inputs, Encoding.UTF8, "application/json");
-
-                    //(client.BaseAddress, new StringContent(inputs, Encoding.UTF8,"application/json"));
-                    //HttpResponseMessage response = await client.GetAsync($"default/{id}");
 
 
                     var stringResult = await response.Content.ReadAsStringAsync();
@@ -145,12 +142,13 @@ namespace CodeTalk.Controllers
         public async Task<IActionResult> CreateIfStatement(int id, [Bind("MethodName, CodeName, IntegerValue, ParameterName")] IfStatement ifStatement)
         {
             IfStatement sendResults = new IfStatement();
+            sendResults.ID = 3;
             sendResults.MethodName = ifStatement.MethodName;
             sendResults.CodeName = ifStatement.CodeName;
             sendResults.IntegerValue = ifStatement.IntegerValue;
             sendResults.ParameterName = ifStatement.ParameterName;
 
-            string apiSend = JsonConvert.SerializeObject(sendResults);
+            string inputs = JsonConvert.SerializeObject(sendResults);
 
             if (ModelState.IsValid)
             {
@@ -158,8 +156,10 @@ namespace CodeTalk.Controllers
                 {
 
 
-                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                    HttpResponseMessage response = await client.GetAsync($"default/{id}");
+                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/default/");
+                    string uri = "https://codetalkapi.azurewebsites.net/api/default/";
+                    HttpResponseMessage response = await client.PostAsync(uri, new StringContent(inputs, Encoding.UTF8, "application/json"));
+
 
                     var stringResult = await response.Content.ReadAsStringAsync();
                     Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
@@ -167,7 +167,7 @@ namespace CodeTalk.Controllers
                     return View("Index", new Results
                     {
                         ID = rawSentence.ID,
-                        baseString = rawSentence.baseString,
+                        returnString = rawSentence.returnString,
                         Option = rawSentence.Option
                     });
 
@@ -187,13 +187,14 @@ namespace CodeTalk.Controllers
         public async Task<IActionResult> CreateVariable(int id, [Bind("MethodName, CodeName, DataType, VariableName, VariableValue")] Variable variable)
         {
             Variable sendResults = new Variable();
+            sendResults.ID = 4;
             sendResults.MethodName = variable.MethodName;
             sendResults.CodeName = variable.CodeName;
             sendResults.DataType = variable.DataType;
             sendResults.VariableName = variable.VariableName;
             sendResults.VariableValue = variable.VariableValue;
 
-            string apiSend = JsonConvert.SerializeObject(sendResults);
+            string inputs = JsonConvert.SerializeObject(sendResults);
 
             if (ModelState.IsValid)
             {
@@ -201,8 +202,10 @@ namespace CodeTalk.Controllers
                 {
 
 
-                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                    HttpResponseMessage response = await client.GetAsync($"default/{id}");
+                    client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/default/");
+                    string uri = "https://codetalkapi.azurewebsites.net/api/default/";
+                    HttpResponseMessage response = await client.PostAsync(uri, new StringContent(inputs, Encoding.UTF8, "application/json"));
+
 
                     var stringResult = await response.Content.ReadAsStringAsync();
                     Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
@@ -210,7 +213,7 @@ namespace CodeTalk.Controllers
                     return View("Index", new Results
                     {
                         ID = rawSentence.ID,
-                        baseString = rawSentence.baseString,
+                        returnString = rawSentence.returnString,
                         Option = rawSentence.Option
                     });
 

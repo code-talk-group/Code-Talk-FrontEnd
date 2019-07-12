@@ -7,6 +7,7 @@ namespace CodeTalk.Models
 {
     public class Variable
     {
+        public int ID { get; set; }
         public string CodeName { get; set; }
 
         public string MethodName { get; set; }
