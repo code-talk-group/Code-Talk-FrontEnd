@@ -11,11 +11,6 @@ namespace CodeTalk.Controllers
 {
     public class ResultsController : Controller
     {
-        //public IActionResult Index()
-        //{
-        //    return View();
-
-        //}
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -32,14 +27,45 @@ namespace CodeTalk.Controllers
 
                 return View(rawSentence);
 
-                //return View("Index", new ApiResult
-                //{
-                    //ID = rawSentence.ID,
-                    //returnString = rawSentence.returnString,
-                    //Option = rawSentence.Option
-                //});
-
             }
+        }
+        public async Task<IActionResult> Delete(int id)
+        {
+            using (var client = new HttpClient())
+            {
+
+
+                client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                HttpResponseMessage response = await client.DeleteAsync($"user/{id}");
+                response.EnsureSuccessStatusCode();
+
+
+                return RedirectToAction(nameof(Index));
+            }
+
+        }
+
+        public async Task<IActionResult> Edit(int id)
+        {
+            using (var client = new HttpClient())
+            {
+
+
+                client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
+                HttpResponseMessage response = await client.GetAsync($"user/{id}");
+
+                var stringResult = await response.Content.ReadAsStringAsync();
+                var rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
+
+                return View(rawSentence);
+            }
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(int id, [Bind("baseString")] Results results)
+        {
+            return RedirectToAction(nameof(Index));
+
         }
     }
 }

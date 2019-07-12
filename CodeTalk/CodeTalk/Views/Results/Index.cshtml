@@ -1,5 +1,4 @@
-﻿@*@model IEnumerable<CodeTalk.Models.Results>;*@
-@model List<CodeTalk.Models.ApiResult>;
+﻿@model List<CodeTalk.Models.ApiResult>;
 
 
 @{
@@ -36,15 +35,17 @@
                                 @Html.DisplayFor(modelItem => item.returnString)
                             </td>
 
-                            <td>
-                                <a asp-action="Edit" asp-route-id="@item.CodeName">Edit</a> |
-                                <a asp-action="Delete" asp-route-id="@item.CodeName">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </section>
-</body>
+                        <td>
+                            <a asp-action="Edit" asp-controller="Results" asp-route-id="@item.ID">Edit</a> |
+                            <a asp-action="Delete" asp-controller="Results" asp-route-id="@item.ID">Delete</a>
+                            @*<a  href="@Url.Action("Delete", "Results")">Delete</a>*@
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <p>Results Page</p>
+  </body>
 </html>
