@@ -1,6 +1,10 @@
 # Code Talk 
 
-##### *Authors: Denevan Pettie, Jon Rice, Meggan Triplett, Richard Rosado*  
+##### *Authors: Denevan Pettie, Jon Rice, Meggan Triplett, Richard Rosado* 
+
+## Link  
+
+[codet4lk.net](https://codet4lk.azurewebsites.net/)
 
 ------------------------------
 
@@ -22,7 +26,7 @@ https://github.com/code-talk-group/CodeTalkAPI
 
 ## Homepage  
 
-![CodeTalk](https://user-images.githubusercontent.com/47064974/61012251-89f8ff80-a332-11e9-87e3-5d35e0e36a12.png)
+![Landing](https://user-images.githubusercontent.com/47064974/61093390-2557a680-a3ff-11e9-9f46-a73c126b2a37.png)
 
 
 ## Wireframes  
