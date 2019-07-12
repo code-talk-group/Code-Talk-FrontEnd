@@ -1,0 +1,50 @@
+﻿@model CodeTalk.Models.IfStatement
+
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>If Statement Form</title>
+</head>
+<body>
+    <form method="post" asp-action="CreateIfStatement" asp-controller="Forms" class="ifStatement" asp-route-id="3">
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="project">
+            <input asp-for="CodeName" type="text" id="codeName" autocomplete="off" placeholder="Project Name" required>
+        </div>
+        <div class="mName">
+            <input asp-for="MethodName" type="text" id="MethodName" autocomplete="off" placeholder="Method Name"  oninput="methodName()" required>
+        </div>
+        <div class="pName">
+            <input asp-for="ParameterName"type="text" id="ParameterName" autocomplete="off" placeholder="Parameter Name"  oninput="methodName()" required>
+        </div>
+        <div class="intVal">
+            <input asp-for="IntegerValue" type="text" id="IntegerValue" autocomplete="off" placeholder="Integer Value"  oninput="methodName()" required>
+        </div>
+
+        <h2 id="projectName"></h2>
+        <hr />
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var codeName = document.getElementById("codeName").value;
+                var x = document.getElementById("MethodName").value;
+                var y = document.getElementById("ParameterName").value;
+                var z = document.getElementById("IntegerValue").value;
+                document.getElementById("projectName").innerHTML = codeName;
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static void " + x + "(int " + y + ")<br><br>{<br><br></pre><pre>  " + y + " = " + z + ";</pre><br><br><pre>  if (" + y + " < 10)<br><br><pre>  {<br><br>    Console.WriteLine(\"Yes\");</pre><br><br>  }<br><br>  else<br><br>  {<br><br>    Console.WriteLine(\"No\");<br><br>  }<br><br>}";
+                var inputArr = [codeName, MethodName.value, ParameterName.value, IntegerValue.value];
+                var json = JSON.stringify(inputArr);
+            }
+        </script>
+        <button class="toResultButton" type="submit">Sumbit</button>
+    </form>
+</body>
+</html>

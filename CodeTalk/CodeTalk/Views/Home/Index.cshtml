@@ -1,0 +1,44 @@
+﻿@model CodeTalk.Models.Form;
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/Reset.css" rel="stylesheet" />
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One|Space+Mono|Satisfy|Open+Sans|Oswald&display=swap" rel="stylesheet">
+
+    <title>Code Talk Home Page</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo"><a href="@Url.Action("Index","Home")">Code Talk</a></div>
+        <ul class="viewNav">
+            <li><a href="@Url.Action("Index", "Results")">All Results</a></li>
+            <li><a href="#aboutUs">About Us</a></li>
+            <li class="slogan">Talk the Code Talk</li>
+        </ul>
+    </header>
+    <div class="homeLogo">Code Talk</div>
+    <section>
+        <div class="border">
+            <form class="idxForm" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="FormType" class="control-label">Begin</label>
+                    <select asp-for="FormType" asp-items="@Html.GetEnumSelectList(typeof(CodeTalk.Models.FormType))" class="form-control"></select>
+                    <span asp-validation-for="FormType" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <button asp-route-selection="FormType" type="submit" class="btn btn-primary">Next</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="copyright">Copyright 2019 &copy</div>
+    </footer>
+</body>
+</html>

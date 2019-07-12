@@ -1,0 +1,52 @@
+﻿@model CodeTalk.Models.Function
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Function Form</title>
+</head>
+<body>
+    <form method="post" asp-action="CreateFunction" asp-controller="Forms" class="function" asp-route-id="1">
+        @*<input type="hidden" asp-for="ID" />*@
+
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="project">
+            <input asp-for="CodeName" type="text" id="codeName" autocomplete="off" placeholder="Project Name" oninput="methodName()" required>
+        </div>
+        <div class="mName">
+            <input asp-for="MethodName" type="text" id="MethodName" autocomplete="off" placeholder="Method Name"  oninput="methodName()" required>
+        </div>
+        <div class="pName">
+            <input asp-for="DataType" type="text" id="DataType" autocomplete="off" placeholder="Data Type"  oninput="methodName()" required>
+        </div>
+        <div class="intVal">
+            <input asp-for="ParameterName" type="text" id="ParameterName" autocomplete="off" placeholder="Parameter Name"  oninput="methodName()" required>
+        </div>
+
+
+        <h2 id="projectName"></h2>
+        <hr />
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var codeName = document.getElementById("codeName").value;
+                var x = document.getElementById("MethodName").value;
+                var y = document.getElementById("DataType").value;
+                var z = document.getElementById("ParameterName").value;
+                document.getElementById("projectName").innerHTML = codeName;
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static void " + x + "(" + y + " " + z + ")<br><br>{<br><br></pre><pre>   Method statements and arguments defined here...<br><br></pre><pre>}</pre>";
+                var inputArr = [codeName, MethodName.value, DataType.value, ParameterName.value];
+                var json = JSON.stringify(inputArr);
+            }
+        </script>
+        <button class="toResultButton" type="submit">Submit</button>
+    </form>
+</body>
+</html>

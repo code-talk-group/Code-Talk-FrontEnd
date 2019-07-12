@@ -1,0 +1,53 @@
+﻿@model CodeTalk.Models.Variable
+@{
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Variable Form</title>
+</head>
+<body>
+    <form method="post" asp-action="CreateVariable" asp-controller="Forms" class="variable" asp-route-id="4">
+        <h2 class="codeInput"><strong>Code Details</strong></h2>
+        <hr />
+        <div class="project">
+            <input asp-for="CodeName" type="text" id="codeName" autocomplete="off" placeholder="Project Name" oninput="methodName()" required>
+        </div>
+        <div class="mName">
+            <input asp-for="MethodName" type="text" id="MethodName" autocomplete="off" placeholder="Method Name"  oninput="methodName()" required>
+        </div>
+        <div class="dataTp">
+            <input asp-for="DataType" type="text" id="DataType" autocomplete="off" placeholder="Data Type"  oninput="methodName()" required>
+        </div>
+        <div class="mName">
+            <input asp-for="VariableName" type="text" id="VariableName" autocomplete="off" placeholder="Variable Name"  oninput="methodName()" required>
+        </div>
+        <div class="dataTp">
+            <input asp-for="VariableValue" type="text" id="VariableValue" autocomplete="off" placeholder="Variable Value"  oninput="methodName()" required>
+        </div>
+
+        <h2 id="projectName"></h2>
+        <hr />
+        <p id="codeTalkCode"></p>
+
+        <script>
+            function methodName() {
+                var codeName = document.getElementById("codeName").value;
+                var x = document.getElementById("MethodName").value;
+                var y = document.getElementById("DataType").value;
+                var z = document.getElementById("VariableName").value;
+                var m = document.getElementById("VariableValue").value;
+                document.getElementById("projectName").innerHTML = codeName;
+                document.getElementById("codeTalkCode").innerHTML = "<pre>public static int " + x + "()<br><br>{<br><br>  </pre>" + y + " " + z + " = " + m + ";<br><br>}"
+                var inputArr = [codeName, MethodName.value, DataType.value, VariableName.value, VariableValue.value];
+                var json = JSON.stringify(inputArr);
+            }
+        </script>
+        <button class="toResultButton" type="submit">Submit</button>
+    </form>
+</body>
+</html>

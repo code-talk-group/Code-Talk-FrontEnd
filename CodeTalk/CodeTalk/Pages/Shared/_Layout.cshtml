@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/Reset.css" rel="stylesheet"/>
+    <link href="~/Styles/StyleSheet.css" rel="stylesheet"/>
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+        <header class="header">
+            <div class="logo"><a href="@Url.Action("Index","Home")">Code Talk</a></div>
+            <ul class="viewNav">
+                <li><a href="@Url.Action("Index", "Results")">All Results</a></li>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li class="slogan">Talk the Code Talk</li>
+            </ul>
+        </header>
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="copyright">Copyright 2019 &copy</div>
+    </footer>
+</body>
+</html>
