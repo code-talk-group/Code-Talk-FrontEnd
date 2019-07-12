@@ -13,8 +13,8 @@
     <title>Result Home</title>
 </head>
 <body>
-    <section id="resultContain">
-        <div id="tablecontainer">
+    <section class="resultContainer">
+        <div class="resultPageTitle">All Results: </div>
             <table class="table">
                 <tbody>
 
@@ -31,12 +31,12 @@
                                 </td>
                             </tr>*@
                         <tr>
-                            <td>
+                            <td class="allPrevious">
                                 @Html.DisplayFor(modelItem => item.returnString)
                             </td>
 
-                        <td>
-                            <a asp-action="Edit" asp-controller="Results" asp-route-id="@item.ID">Edit</a> |
+                        <td class="allPrevious">
+                            @*<a asp-action="Edit" asp-controller="Results" asp-route-id="@item.ID">Edit</a> |*@
                             <a asp-action="Delete" asp-controller="Results" asp-route-id="@item.ID">Delete</a>
                             @*<a  href="@Url.Action("Delete", "Results")">Delete</a>*@
                         </td>
