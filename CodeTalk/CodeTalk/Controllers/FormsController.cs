@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using CodeTalk.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -45,14 +46,12 @@ namespace CodeTalk.Controllers
         /// <param name="id">End point option for the api</param>
         /// <returns>New page with sentence populated with data sent</returns>
         [HttpPost]
-        public async Task<IActionResult> CreateForLoop(int id, [Bind("MethodName, ArrayName, CodeName")] ForLoop forLoop)
+        public async Task<IActionResult> CreateForLoop(int id, [Bind("ID, MethodName, ArrayName, CodeName")] ForLoop forLoop)
         {
-            ForLoop sendResults = new ForLoop();
-            sendResults.MethodName = forLoop.MethodName;
-            sendResults.CodeName = forLoop.CodeName;
-            sendResults.ArrayName = forLoop.ArrayName;
+            ForLoopForm forLoopForm = new ForLoopForm(forLoop.MethodName, forLoop.ArrayName);
 
-            string apiSend = JsonConvert.SerializeObject(sendResults); 
+            string inputs = JsonConvert.SerializeObject(forLoopForm);
+            ApiData apiData = new ApiData(forLoop.ID, forLoop.CodeName, inputs);
 
             if (ModelState.IsValid)
             {
@@ -61,7 +60,9 @@ namespace CodeTalk.Controllers
 
 
                     client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                    HttpResponseMessage response = await client.GetAsync($"default/{id}");
+                    HttpResponseMessage response = await client.PostAsync(client.BaseAddress, new StringContent(inputs, Encoding.UTF8, "application/json"));
+                    //HttpResponseMessage response = await client.GetAsync($"default/{id}");
+
 
                     var stringResult = await response.Content.ReadAsStringAsync();
                     Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
@@ -89,14 +90,18 @@ namespace CodeTalk.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateFunction(int id, [Bind("ID, MethodName, DataType, CodeName, ParameterName")] Function function)
         {
-            Function sendResults = new Function();
-            sendResults.ID = function.ID;
-            sendResults.MethodName = function.MethodName;
-            sendResults.CodeName = function.CodeName;
-            sendResults.DataType = function.DataType;
-            sendResults.ParameterName = function.ParameterName;
+            Function sendFunction = new Function();
+            sendFunction.ID = 1;
+            sendFunction.CodeName = function.CodeName;
+            sendFunction.MethodName = function.MethodName;
+            sendFunction.DataType = function.DataType;
+            sendFunction.ParameterName = function.ParameterName;
 
-            string apiSend = JsonConvert.SerializeObject(sendResults);
+            FunctionForm functionForm = new FunctionForm(function.MethodName, function.ParameterName, function.DataType);
+
+            string inputs = JsonConvert.SerializeObject(sendFunction);
+
+            ApiData apiData = new ApiData(function.ID, function.CodeName, inputs);
 
             if (ModelState.IsValid)
             {
@@ -105,7 +110,9 @@ namespace CodeTalk.Controllers
 
 
                     client.BaseAddress = new Uri("https://codetalkapi.azurewebsites.net/api/");
-                    HttpResponseMessage response = await client.GetAsync($"default/{id}");
+                    HttpResponseMessage response = await client.PostAsync(client.BaseAddress, new StringContent(inputs, Encoding.UTF8,"application/json"));
+                    //HttpResponseMessage response = await client.GetAsync($"default/{id}");
+
 
                     var stringResult = await response.Content.ReadAsStringAsync();
                     Results rawSentence = JsonConvert.DeserializeObject<Results>(stringResult);
