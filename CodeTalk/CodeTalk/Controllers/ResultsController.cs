@@ -55,6 +55,11 @@ namespace CodeTalk.Controllers
 
         }
 
+        /// <summary>
+        /// Edits entry in database
+        /// </summary>
+        /// <param name="id">ID of entry to be edited</param>
+        /// <returns>Updated list of the database entries in JSON</returns>
         public async Task<IActionResult> Edit(int id)
         {
             using (var client = new HttpClient())
@@ -71,6 +76,12 @@ namespace CodeTalk.Controllers
             }
         }
 
+        /// <summary>
+        /// Redirects from edit to view all entries
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="results"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> Edit(int id, [Bind("baseString")] Results results)
         {
