@@ -12,6 +12,10 @@ namespace CodeTalk.Controllers
     public class ResultsController : Controller
     {
 
+        /// <summary>
+        /// Gets all results from api database of saved entries
+        /// </summary>
+        /// <returns>List of sentences that have been saved by users</returns>
         [HttpGet]
         public async Task<IActionResult> Index()
         {
@@ -29,6 +33,12 @@ namespace CodeTalk.Controllers
 
             }
         }
+
+        /// <summary>
+        /// Deletes entry in database based off of the sentence ID
+        /// </summary>
+        /// <param name="id">ID of entry to be deleted</param>
+        /// <returns>Updated list of the database entries</returns>
         public async Task<IActionResult> Delete(int id)
         {
             using (var client = new HttpClient())
