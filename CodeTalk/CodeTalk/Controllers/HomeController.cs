@@ -9,12 +9,21 @@ namespace CodeTalk.Controllers
 {
     public class HomeController : Controller
     {
+
+    /// <summary>
+    /// Directs to the home page of Application
+    /// </summary>
         [HttpGet]
       public  IActionResult Index()
         {
             return View();
         }
 
+        /// <summary>
+        /// Redirects to forms controller based off drop down selection. 
+        /// </summary>
+        /// <param name="form"></param>
+        /// <returns></returns>
         [HttpPost]
         public IActionResult Index(Form form)
         {

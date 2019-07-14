@@ -6,11 +6,20 @@ using System.Threading.Tasks;
 
 namespace CodeTalk.Models
 {
+    /// <summary>
+    /// Model for a Code Form. 
+    /// </summary>
     public class Form
     {
+        /// <summary>
+        /// Gets/Sets the Form Type based off the FormType enum
+        /// </summary>
         public FormType FormType { get; set; }
     }
 
+    /// <summary>
+    /// Enum table for FormType that allows selection of what type of form to be filled out
+    /// </summary>
     public enum FormType
     {
         [Display(Name = "Function")]
