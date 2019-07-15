@@ -100,7 +100,6 @@ namespace CodeTalk.Controllers
             sendFunction.DataType = function.DataType;
             sendFunction.ParameterName = function.ParameterName;
 
-            FunctionForm functionForm = new FunctionForm(function.MethodName, function.ParameterName, function.DataType);
 
             string inputs = JsonConvert.SerializeObject(sendFunction);
 
